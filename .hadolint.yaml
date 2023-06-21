@@ -3,3 +3,4 @@
    - DL3020
 #   - DL3059
    - DL4000
+failure-threshold: error
