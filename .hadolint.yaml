@@ -1,5 +1,9 @@
-ignored:
-  - DL3018
-  - DL3020
-  - DL3059
-  - DL4000
+# ignored:
+#   - DL3018
+#   - DL3020
+#   - DL3059
+#   - DL4000
+failure-threshold: warning
+override:
+  error:
+    - DL3020
