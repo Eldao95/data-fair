@@ -11,7 +11,7 @@
     "report": "nyc report --reporter=html",
     "lint": "eslint --ext js,vue --ignore-path .gitignore .",
     "lint-fix": "eslint --ext js,vue --ignore-path .gitignore --fix .",
-    "lint-docker": "docker run --rm -i hadolint/hadolint < Dockerfile", 
+    "lint-docker": "docker run --rm -i -v ./.hadolint.yaml:/.config/hadolint.yaml hadolint/hadolint < Dockerfile", 
     "dev-deps": "docker compose --profile dev up -d --wait",
     "dev-server": "DEBUG=upgrade*,i18n*,notifications,catalogs*,thumbnails NODE_ENV=development nodemon server",
     "dev-server-memory": "DEBUG=upgrade*,i18n*,notifications,worker:* DEBUG_HEAP=* NODE_ENV=development nodemon -x \"node --expose-gc\" server",
