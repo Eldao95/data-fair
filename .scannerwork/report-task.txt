@@ -1,0 +1,6 @@
+projectKey=Eldao95_data-fair_AYi5QobCJEaAfzM1pl2w
+serverUrl=http://localhost:9000
+serverVersion=10.0.0.68432
+dashboardUrl=http://localhost:9000/dashboard?id=Eldao95_data-fair_AYi5QobCJEaAfzM1pl2w
+ceTaskId=AYi56Jh-x8UedBtGllFI
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYi56Jh-x8UedBtGllFI
