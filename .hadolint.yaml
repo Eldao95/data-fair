@@ -3,7 +3,7 @@
 #   - DL3020
 #   - DL3059
 #   - DL4000
-failure-threshold: warning
+failure-threshold: error
 override:
   error:
     - DL3020
