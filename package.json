@@ -1,7 +1,7 @@
 {
   "name": "data-fair",
   "version": "3.65.0",
-  "description": "",
+  "description": "*Findable, Accessible, Interoperable and Reusable Data*",
   "main": "server",
   "scripts": {
     "test": "NODE_ENV=test mocha --exit --bail --timeout 30000 test/",
@@ -11,7 +11,7 @@
     "report": "nyc report --reporter=html",
     "lint": "eslint --ext js,vue --ignore-path .gitignore .",
     "lint-fix": "eslint --ext js,vue --ignore-path .gitignore --fix .",
-    "lint-docker": "docker run --rm -i -v ./.hadolint.yaml:/.config/hadolint.yaml hadolint/hadolint < Dockerfile", 
+    "lint-docker": "docker run --rm -i -v ./.hadolint.yaml:/.config/hadolint.yaml hadolint/hadolint < Dockerfile",
     "dev-deps": "docker compose --profile dev up -d --wait",
     "dev-server": "DEBUG=upgrade*,i18n*,notifications,catalogs*,thumbnails NODE_ENV=development nodemon server",
     "dev-server-memory": "DEBUG=upgrade*,i18n*,notifications,worker:* DEBUG_HEAP=* NODE_ENV=development nodemon -x \"node --expose-gc\" server",
@@ -27,7 +27,7 @@
     "postinstall": "patch-package",
     "prepare": "husky install"
   },
-  "author": "",
+  "author": "Elyes95",
   "license": "AGPL-3.0-only",
   "eslintConfig": {
     "root": true,
@@ -211,5 +211,13 @@
     "vt-pbf": "3.1.1",
     "ws": "^7.4.1",
     "xlsx": "^0.18.0"
+  },
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "data-fair"
   }
 }
