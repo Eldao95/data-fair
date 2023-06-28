@@ -25,14 +25,8 @@ jobs:
       with:
         scan-type: 'fs'
         scan-ref: .
+        scanners: 'vuln,secret,config'
         severity: 'CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN'
-    
-    - name: Sonarlint linting
-      uses: jwgmeligmeyling/spotbugs-github-action@v1.2
-      with:
-        name: Sonarlint
-        title: Sonarlint report
-        path: build/reports/sonarlint.xml
     
     - name: Sonar scan
       uses: sonarsource/sonarqube-scan-action@master
