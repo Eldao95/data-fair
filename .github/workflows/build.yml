@@ -20,6 +20,23 @@ jobs:
         dockerfile: Dockerfile
         config: ./.hadolint.yaml
 
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
+        format: 'table'
+        exit-code: '1'
+        ignore-unfixed: true
+        vuln-type: 'os,library'
+        severity: 'CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN'
+    
+    - name: Sonarlint linting
+      uses: jwgmeligmeyling/spotbugs-github-action@v1.2
+      with:
+        name: Sonarlint
+        title: Sonarlint report
+        path: build/reports/sonarlint.xml
+    
     - name: Sonar scan
       uses: sonarsource/sonarqube-scan-action@master
       env:
@@ -82,16 +99,6 @@ jobs:
         network: host
         cache-from: type=gha
         cache-to: type=gha,mode=max
-    
-    - name: Run Trivy vulnerability scanner
-      uses: aquasecurity/trivy-action@master
-      with:
-          image-ref: 'docker.io/my-organization/my-app:${{ github.sha }}'
-          format: 'table'
-          exit-code: '1'
-          ignore-unfixed: true
-          vuln-type: 'os,library'
-          severity: 'CRITICAL,HIGH'
 
     - name: Stop test dependencies
       run: docker compose stop
