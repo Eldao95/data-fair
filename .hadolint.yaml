@@ -1,5 +1,4 @@
-##failure-threshold: error
-##ignored:
-##   - DL3020
-##   - DL4000
-# œœœœ
+failure-threshold: error
+ignored:
+   - DL3020
+   - DL4000
